@@ -51,5 +51,13 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-rajanikanth16:Rajanikanth16/idcs-auth-library.git"
+  },
+  "author": "",
+  "license": "ISC"
 }
