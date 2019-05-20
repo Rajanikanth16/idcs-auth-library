@@ -1,6 +1,6 @@
 {
   "name": "idcs-auth-library",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start-prod": "ng serve --proxy-config proxy.config.json --prod --open",
