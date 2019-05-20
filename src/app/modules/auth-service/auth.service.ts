@@ -47,11 +47,10 @@ export class AuthService {
   getAuthCode(routeSnapshot: string): void {
     this.verifier = this.generateVerifier();
     let codeChallenge: string = this.generateCodeChallenge(this.verifier);
-    localStorage.setItem('app_doc_base_url', this.applicationConfig.appDocBaseUrl);
     this.identityProviderDomain = this.applicationConfig.idcsInstance;
     this.spaOAuthClientId = this.applicationConfig.spaOAuthClientId;
-    const redirectUrl = this.baseUrl + '/auth';
-    const scope = this.applicationConfig.oauthTokenScope || this.applicationConfig.scope;
+    const redirectUrl = this.baseUrl + this.applicationConfig.redirectUrl;
+    const scope = this.applicationConfig.oauthTokenScope;
 
     let auth = new auth0.WebAuth({
       domain: this.identityProviderDomain + this.applicationConfig.basePath,
@@ -68,7 +67,6 @@ export class AuthService {
 
   getAccessToken(authCode: string, state: string): void {
     authCode = decodeURI(authCode);
-    localStorage.setItem('app_doc_base_url', this.applicationConfig.appDocBaseUrl);
     this.identityProviderDomain = this.applicationConfig.idcsInstance;
     this.spaOAuthClientId = this.applicationConfig.spaOAuthClientId;
 
@@ -108,7 +106,7 @@ export class AuthService {
 
   private redirectToLogout(): void {
     let postLogoutRedirectUrl = this.baseUrl;
-    let logoutUrl: string = 'https://' + this.identityProviderDomain + '/oauth2/v1/userlogout?id_token_hint=' + localStorage.getItem('id_token') + '&post_logout_redirect_uri=' + postLogoutRedirectUrl;
+    let logoutUrl: string = 'https://' + this.identityProviderDomain + this.applicationConfig.basePath + '/userlogout?id_token_hint=' + localStorage.getItem('id_token') + '&post_logout_redirect_uri=' + postLogoutRedirectUrl;
     localStorage.removeItem('access_token');
     localStorage.removeItem('access_image_path');
     localStorage.removeItem('id_token');

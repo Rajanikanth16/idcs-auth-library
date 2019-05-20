@@ -56,8 +56,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com-rajanikanth16:Rajanikanth16/idcs-auth-library.git"
+    "url": "git+https://github.com/Rajanikanth16/idcs-auth-library.git"
   },
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/Rajanikanth16/idcs-auth-library/issues"
+  },
+  "homepage": "https://github.com/Rajanikanth16/idcs-auth-library#readme",
+  "author": "Rajanikanth.karupakula",
   "license": "ISC"
 }
