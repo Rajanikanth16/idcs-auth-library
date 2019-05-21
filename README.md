@@ -1,5 +1,7 @@
 # IDCS Auth Library SDK 
 [![npm version](https://img.shields.io/npm/v/idcs-auth-library.svg?style=flat-square)](https://www.npmjs.com/package/idcs-auth-library)
+[![build status](https://img.shields.io/travis/idcs-auth-library/master.svg?style=flat-square)](https://travis-ci.org/idcs-auth-library)
+
 An Angular wrapper around IDCS **Identity Provider** which supports single sign-on using OpenID standard
 
 This library currently supports three-legged authentication (usually known as most secure) with PKCE (Proof of key code exchange) is used and implemented by both client and authorization server.
